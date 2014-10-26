@@ -1,0 +1,15 @@
+#instead of running g++ hello.cpp -o hello
+
+C=g++
+
+all: hello
+	@echo "Executing ..."
+	@./hello
+
+hello: hello.o
+	@echo "Linking for a new executable ..."
+	@$(C) hello.o -o hello
+
+hello.o: hello.cpp
+	@echo "Making new object file ..."
+	@$(C) -c hello.cpp
